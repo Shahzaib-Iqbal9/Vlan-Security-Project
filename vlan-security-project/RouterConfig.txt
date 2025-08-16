@@ -1,0 +1,59 @@
+Switch>en
+Switch#config t
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 40
+Switch(config-vlan)#vlan 30
+Switch(config-vlan)#vlan 40
+Switch(config-vlan)#ex 
+
+Switch(config)#int fa0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#ex
+
+Switch(config)#int fa0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#ex
+
+Switch(config)#int fa0/3
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 30
+ex
+
+Switch(config-if)#int fa0/4
+Switch(config-if)#switchport mode acces
+Switch(config-if)#switchport access vlan 40
+Switch(config-if)#ex
+
+FOR TRUNK:-
+SWITCH 0:
+
+Switch>en
+Switch#config t
+
+Switch(config)#int fa0/5
+Switch(config-if)#switchport mode trunk	
+Switch(config-if)#switchport trunk allowed vlan all
+Switch(config-if)#EX
+
+SWITCH 1:
+
+Switch>en
+Switch#config t
+
+Switch(config)#int fa0/5
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan all
+Switch(config-if)#EX
+
+FOR PORT-SECURITY:-
+
+Switch>en
+Switch#config t
+Switch(config)#int fa0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport port-security
+Switch(config-if)#switchport port-security mac-address sticky
+Switch(config-if)#switchport port-security violation shutdown
+Switch(config-if)#ex

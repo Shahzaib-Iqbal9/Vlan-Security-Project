@@ -1,2 +1,3 @@
-# Vlan-Security-Project
-"Cisco Packet Tracer project with VLANs, trunking, port security and subnetting"
+# 🔐 VLAN Security Project - Cisco Packet Tracer
+
+A practical project using Cisco Packet Tracer to implement VLANs, subnetting, trunking, and port security for network segmentation and security.
